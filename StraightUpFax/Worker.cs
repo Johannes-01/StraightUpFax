@@ -7,11 +7,23 @@ namespace StraightUpFax
 
         private readonly string host = "https://ntfy.sh";
 
+        public List<string> Quotes { get; set; } = new List<string>();
+
         public Worker()
         {
+            this.Quotes.AddRange(new string[]
+            {
+                    "And as big as the clouds may look, every storm eventually passes.",
+                    "You have no enemies.",
+                    "It is a shame for a man to grow old without seeing the beauty and strength of which his body is capable.",
+                    "Skip the villain ark.",
+                    "Do not let yourself be guided by the feeling of lust.",
+                    "The only thing that is constant is change. - Heraclitus.",
+                    "Never let yourself be saddened by a separation - Miyamoto Musashi.",
+            });
         }
 
-        public void SendPushNotificationToNtfy(string message,string adress)
+        public void SendPushNotificationToNtfy(string message, string adress)
         {
             var client = new RestClient($"{host}");
 
@@ -31,28 +43,17 @@ namespace StraightUpFax
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                var quotes = new string[]
-                {
-                    "And as big as the clouds may look, every storm eventually passes.",
-                    "You have no enemies.",
-                    "It is a shame for a man to grow old without seeing the beauty and strength of which his body is capable.",
-                    "Skip the villain ark.",
-                    "Do not let yourself be guided by the feeling of lust.",
-                    "The only thing that is constant is change. - Heraclitus.",
-                    "Never let yourself be saddened by a separation - Miyamoto Musashi.",
-                };
 
                 var random = new Random();
-                var index = random.Next(quotes.Length);
-                var quote = quotes[index];
+                var index = random.Next(this.Quotes.Count);
+                var quote = this.Quotes[index];
 
                 SendPushNotificationToNtfy(quote, "straightupfax");
 
-                TimeSpan start = new TimeSpan(0, 0, 0); 
-                TimeSpan end = new TimeSpan(8, 0, 0); 
-                TimeSpan now = DateTime.Now.TimeOfDay;
+                DateTime currentTime = DateTime.Now;
+                int currentHour = currentTime.Hour;
 
-                if ((now > start) && (now < end))
+                if (currentHour >= 22 && currentHour < 8)
                 {
                     await Task.Delay(TimeSpan.FromHours(8), stoppingToken);
                 }

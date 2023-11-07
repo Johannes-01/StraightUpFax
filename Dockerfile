@@ -6,13 +6,19 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY StraightUpFax/StraightUpFax.csproj StraightUpFax/
+COPY FaxWebService/FaxWebService.csproj FaxWebService/
 RUN dotnet restore "StraightUpFax/StraightUpFax.csproj"
+RUN dotnet restore "FaxWebService/FaxWebService.csproj"
+
+# copy all locally files to the working directory
 COPY . .
 WORKDIR "/src/StraightUpFax"
 RUN dotnet build "StraightUpFax.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "StraightUpFax.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "FaxWebService.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
 
 FROM base AS final
 WORKDIR /app

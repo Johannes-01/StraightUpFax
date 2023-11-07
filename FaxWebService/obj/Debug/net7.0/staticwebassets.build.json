@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "sTjdnzQGQpvtK8AcK4M9bFDgT1utARRtKXLDKfSdwU0=",
+  "Source": "FaxWebService",
+  "BasePath": "_content/FaxWebService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

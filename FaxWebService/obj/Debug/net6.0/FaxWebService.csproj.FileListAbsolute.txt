@@ -1,0 +1,6 @@
+E:\Temp\StraightUpFax\FaxWebService\obj\Debug\net6.0\FaxWebService.csproj.AssemblyReference.cache
+E:\Temp\StraightUpFax\FaxWebService\obj\Debug\net6.0\FaxWebService.GeneratedMSBuildEditorConfig.editorconfig
+E:\Temp\StraightUpFax\FaxWebService\obj\Debug\net6.0\FaxWebService.AssemblyInfoInputs.cache
+E:\Temp\StraightUpFax\FaxWebService\obj\Debug\net6.0\FaxWebService.AssemblyInfo.cs
+E:\Temp\StraightUpFax\FaxWebService\obj\Debug\net6.0\FaxWebService.csproj.CoreCompileInputs.cache
+E:\Temp\StraightUpFax\FaxWebService\obj\Debug\net6.0\FaxWebService.MvcApplicationPartsAssemblyInfo.cache
