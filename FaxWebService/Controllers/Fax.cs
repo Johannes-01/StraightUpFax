@@ -13,14 +13,14 @@ namespace FaxWebService.Controllers
         [HttpPost("/addFax")]
         public IActionResult AddFax([FromBody] string fax)
         {
-            Worker.Quotes.Add(fax);
+            TextFileReader.SetQuote(fax);
             return Ok("Fax added.");
         }
 
         [HttpPost("/removeFax")]
         public IActionResult RemoveFax([FromBody] string fax)
         {
-            Worker.Quotes.Remove(fax);
+            TextFileReader.RemoveQuote(fax);
             return Ok("Fax removed.");
         }
     }

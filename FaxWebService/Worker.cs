@@ -11,17 +11,7 @@ namespace FaxWebService
 
         public static void Initiliaze()
         {
-            Quotes.AddRange(new string[]
-            {
-                    "And as big as the clouds may look, every storm eventually passes.",
-                    "You have no enemies.",
-                    "It is a shame for a man to grow old without seeing the beauty and strength of which his body is capable.",
-                    "Skip the villain arc.",
-                    "Do not let yourself be guided by the feeling of lust.",
-                    "The only thing that is constant is change. - Heraclitus.",
-                    "Never let yourself be saddened by a separation - Miyamoto Musashi.",
-            });
-
+            TextFileReader.GetQuotes();
             ExecuteAsync();
         }
 
