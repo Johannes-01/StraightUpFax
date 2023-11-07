@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Entwicklung\\StraightUpFax\\StraightUpFax\\StraightUpFax.csproj": {}
+    "E:\\Temp\\StraightUpFax\\StraightUpFax\\StraightUpFax.csproj": {}
   },
   "projects": {
-    "C:\\Entwicklung\\StraightUpFax\\StraightUpFax\\StraightUpFax.csproj": {
+    "E:\\Temp\\StraightUpFax\\StraightUpFax\\StraightUpFax.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Entwicklung\\StraightUpFax\\StraightUpFax\\StraightUpFax.csproj",
+        "projectUniqueName": "E:\\Temp\\StraightUpFax\\StraightUpFax\\StraightUpFax.csproj",
         "projectName": "StraightUpFax",
-        "projectPath": "C:\\Entwicklung\\StraightUpFax\\StraightUpFax\\StraightUpFax.csproj",
-        "packagesPath": "C:\\Users\\johan\\.nuget\\packages\\",
-        "outputPath": "C:\\Entwicklung\\StraightUpFax\\StraightUpFax\\obj\\",
+        "projectPath": "E:\\Temp\\StraightUpFax\\StraightUpFax\\StraightUpFax.csproj",
+        "packagesPath": "C:\\Users\\jhaick\\.nuget\\packages\\",
+        "outputPath": "E:\\Temp\\StraightUpFax\\StraightUpFax\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\johan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jhaick\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "E:\\NuGetLocalRepo": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkg.acadgraph.de/repository/nuget-hosted/": {}
         },
         "frameworks": {
           "net7.0": {
