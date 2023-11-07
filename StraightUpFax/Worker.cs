@@ -1,6 +1,4 @@
 using RestSharp;
-using System.Diagnostics.Metrics;
-using System.Runtime.Serialization;
 
 namespace StraightUpFax
 {
@@ -31,7 +29,6 @@ namespace StraightUpFax
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            // send one push a night and every two hours a push when it's day.
             while (!stoppingToken.IsCancellationRequested)
             {
                 var quotes = new string[]
@@ -51,7 +48,18 @@ namespace StraightUpFax
 
                 SendPushNotificationToNtfy(quote, "straightupfax");
 
-                await Task.Delay(TimeSpan.FromHours(1), stoppingToken);
+                TimeSpan start = new TimeSpan(0, 0, 0); 
+                TimeSpan end = new TimeSpan(8, 0, 0); 
+                TimeSpan now = DateTime.Now.TimeOfDay;
+
+                if ((now > start) && (now < end))
+                {
+                    await Task.Delay(TimeSpan.FromHours(8), stoppingToken);
+                }
+                else
+                {
+                    await Task.Delay(TimeSpan.FromHours(2), stoppingToken);
+                }
             }
         }
     }
