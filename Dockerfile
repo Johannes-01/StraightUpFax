@@ -1,5 +1,5 @@
 #runtime
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine-arm64v8 AS base
 WORKDIR /app
 
 #sdk
@@ -20,4 +20,5 @@ RUN dotnet publish "FaxWebService.csproj" -c Release -o /app/publish /p:UseAppHo
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY FaxWebService/quotes.txt .
 ENTRYPOINT ["dotnet", "FaxWebService.dll"]
