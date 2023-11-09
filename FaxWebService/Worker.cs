@@ -44,7 +44,7 @@ namespace FaxWebService
                 DateTime currentTime = DateTime.Now;
                 int currentHour = currentTime.Hour;
 
-                if (currentHour >= 22 && currentHour < 8)
+                if (currentHour >= 22 || currentHour < 8)
                 {
                     await Task.Delay(TimeSpan.FromHours(8));
                 }
