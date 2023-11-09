@@ -6,7 +6,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: FrontendSpecificOrigins,
+    options.AddPolicy(name: "FrontendSpecificOrigins",
                       policy =>
                       {
                           policy.WithOrigins("http://localhost:8081");
@@ -16,6 +16,8 @@ builder.Services.AddCors(options =>
 Worker.Initiliaze();
 
 var app = builder.Build();
+
+app.UseCors("FrontendSpecificOrigins");
 
 app.MapControllers();
 app.UseRouting();
